@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CreditSwan · Pilot Proposal · CID Capital</title>
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" fill="%23F4EFE6"/><path d="M8 30c0-9 6-16 15-16 4 0 7 1 9 4-2-1-4-1-6 0 3 0 5 2 6 5-4-2-8-1-11 2-3 3-8 4-13 5z" fill="%2316211F"/><circle cx="30.5" cy="15.5" r="1.4" fill="%23A98543"/></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   CREDITSWAN · PILOT PROPOSAL · CID CAPITAL
+   Brand sheet V1 — cream canvas, ink text, gold scarcity.
+   Proposal styles are namespaced `pp-`; the About Us block
+   below carries its own scoped `ab-` styles.
+   ============================================================ */
+:root{
+  --cs-ink:#16211F; --cs-cream:#F4EFE6; --cs-gold:#A98543;
+  --cs-teal:#1C4A45; --cs-gpale:#E9C583; --cs-claret:#5C2B2E;
+  --cs-hair:rgba(22,33,31,.14); --cs-hair-s:rgba(22,33,31,.30);
+  --cs-soft:rgba(22,33,31,.78); --cs-faint:rgba(22,33,31,.55);
+  --cs-dark-panel:rgba(244,239,230,.06); --cs-dark-hair:rgba(244,239,230,.18);
+  --cs-dark-soft:rgba(244,239,230,.70); --cs-dark-faint:rgba(244,239,230,.35);
+  --cs-display:'Cormorant Garamond',Georgia,serif;
+  --cs-body:'Manrope','Helvetica Neue',Arial,sans-serif;
+  --cs-mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cs-cream);color:var(--cs-ink);
+  font-family:var(--cs-body);font-size:15.5px;line-height:1.68;
+  -webkit-font-smoothing:antialiased}
+p{margin:0 0 14px}
+strong{font-weight:600;color:var(--cs-ink)}
+
+.pp-goldrule{height:5px;background:var(--cs-gold)}
+.pp-wrap{max-width:1020px;margin:0 auto;padding:0 42px}
+
+/* ── top bar ── */
+.pp-topbar{display:flex;align-items:center;justify-content:space-between;
+  padding:24px 0 18px;border-bottom:1px solid var(--cs-hair)}
+.pp-lockup{display:flex;align-items:center;gap:10px}
+.pp-lockup svg{width:32px;height:28px;transform:translateY(1px)}
+.pp-lockup span{font-family:var(--cs-display);font-weight:600;font-size:22px;
+  letter-spacing:-.5px;color:var(--cs-ink)}
+.pp-doc{font-family:var(--cs-mono);font-size:10px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;color:var(--cs-faint);text-align:right}
+
+/* ── hero ── */
+.pp-hero{padding:62px 0 46px}
+.pp-eyebrow{font-family:var(--cs-mono);font-size:10.5px;font-weight:500;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--cs-teal);margin:0 0 20px}
+.pp-h1{font-family:var(--cs-display);font-weight:600;color:var(--cs-ink);
+  font-size:clamp(38px,5.6vw,60px);line-height:1.06;letter-spacing:-1.3px;margin:0 0 22px;max-width:820px}
+.pp-sub{max-width:760px;color:var(--cs-soft);font-size:16px;line-height:1.75}
+
+/* hero meta strip */
+.pp-meta{display:flex;flex-wrap:wrap;margin:30px 0 0;
+  border-top:1px solid var(--cs-hair);border-bottom:1px solid var(--cs-hair)}
+.pp-meta>div{padding:9px 28px 8px 0}
+.pp-meta>div+div{border-left:1px solid var(--cs-hair);padding-left:28px}
+.pp-meta .k{font-family:var(--cs-mono);font-size:9.5px;font-weight:500;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--cs-faint);margin-bottom:4px}
+.pp-meta .v{font-family:var(--cs-mono);font-size:13.5px;font-weight:500;color:var(--cs-ink)}
+
+/* ── sections ── */
+.pp-sec{padding:54px 0 50px;border-top:1px solid var(--cs-hair)}
+.pp-sec:first-of-type{border-top:none}
+.pp-h2{font-family:var(--cs-display);font-weight:600;color:var(--cs-ink);
+  font-size:31px;line-height:1.2;letter-spacing:-.5px;margin:0 0 16px}
+.pp-lead{max-width:780px;color:var(--cs-soft)}
+
+/* ── exhibit cards ── */
+.pp-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0 8px}
+.pp-col{border:1px solid var(--cs-hair);border-top:3px solid var(--cs-hair-s);
+  border-radius:4px;padding:15px 17px 13px}
+.pp-col h5{font-family:var(--cs-mono);font-size:9.5px;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--cs-teal);margin:0 0 8px}
+.pp-col p{font-size:12.5px;color:var(--cs-soft);line-height:1.6;margin:0}
+.pp-col.is-accent{border-top-color:var(--cs-gold)}
+.pp-col.is-accent h5{color:var(--cs-gold)}
+.pp-flexnote{margin-top:18px;padding:13px 18px;background:rgba(28,74,69,.07);
+  border:1px solid var(--cs-hair);border-left:3px solid var(--cs-teal);
+  border-radius:4px;font-size:12.5px;color:var(--cs-soft)}
+.pp-flexnote .wk{font-family:var(--cs-mono);font-weight:500;font-size:8.5px;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--cs-teal);margin-right:9px}
+
+/* ── demo panel (ink section) ── */
+.pp-demo{background:var(--cs-ink);border-radius:4px;padding:40px 42px 36px;
+  color:var(--cs-cream);position:relative;overflow:hidden}
+.pp-demo .pp-eyebrow{color:var(--cs-gpale)}
+.pp-demo h3{font-family:var(--cs-display);font-weight:600;font-size:27px;
+  letter-spacing:-.5px;line-height:1.2;margin:0 0 12px;color:var(--cs-cream)}
+.pp-demo p{color:var(--cs-dark-soft);max-width:640px;font-size:14.5px}
+.pp-demo .pp-wm{position:absolute;right:-60px;bottom:-84px;width:250px;height:250px;
+  opacity:.05;pointer-events:none}
+.pp-demo-cta{position:relative;display:flex;align-items:center;gap:18px;
+  flex-wrap:wrap;margin-top:22px}
+.pp-btn-ghost{display:inline-block;font-family:var(--cs-mono);font-size:11px;font-weight:500;
+  letter-spacing:1.8px;text-transform:uppercase;color:var(--cs-cream);
+  border:1px solid var(--cs-dark-hair);border-radius:4px;padding:13px 22px;
+  text-decoration:none;transition:border-color .15s}
+.pp-btn-ghost:hover{border-color:var(--cs-gpale);color:var(--cs-gpale)}
+.pp-demo-note{font-family:var(--cs-mono);font-size:9px;letter-spacing:1.4px;
+  text-transform:uppercase;color:var(--cs-dark-faint)}
+
+/* ── timeline cards ── */
+.pp-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0 0}
+.pp-step{position:relative;border:1px solid var(--cs-hair);border-radius:4px;
+  padding:16px 18px 46px;min-height:150px}
+.pp-step h5{font-family:var(--cs-mono);font-size:9.5px;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--cs-teal);margin:0 0 9px}
+.pp-step p{font-size:12.8px;color:var(--cs-soft);line-height:1.6;margin:0}
+.pp-step .n{position:absolute;right:14px;bottom:6px;font-family:var(--cs-mono);
+  font-size:40px;font-weight:500;color:rgba(22,33,31,.14);letter-spacing:-1px}
+
+/* ── day ruler ── */
+.pp-tl{position:relative;height:60px;margin:30px 0 2px}
+.pp-tl-line{position:absolute;top:12px;left:0;right:0;height:1px;background:var(--cs-hair-s)}
+.pp-tl-tick{position:absolute;top:8px;width:1px;height:9px;background:var(--cs-hair-s)}
+.pp-tl-build{position:absolute;top:11px;left:20%;width:60%;height:3px;background:var(--cs-teal)}
+.pp-tl-dot{position:absolute;top:8.5px;width:8px;height:8px;border-radius:50%}
+.pp-tl-dot.d0{left:0;background:var(--cs-ink)}
+.pp-tl-dot.d5{right:0;background:var(--cs-gold)}
+.pp-tl-lab{position:absolute;top:32px;font-family:var(--cs-mono);font-size:9.5px;
+  font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--cs-faint);white-space:nowrap}
+.pp-tl-lab.l0{left:0}
+.pp-tl-lab.lmid{left:50%;transform:translateX(-50%);color:var(--cs-teal)}
+.pp-tl-lab.l5{right:0}
+
+/* ── commercials ── */
+.pp-fees{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:26px 0 0}
+.pp-fee{border:1px solid var(--cs-hair);border-radius:4px;padding:22px 24px 18px}
+.pp-fee.is-accent{border-top:5px solid var(--cs-gold)}
+.pp-fee .k{font-family:var(--cs-mono);font-size:10px;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--cs-teal);margin-bottom:12px}
+.pp-fee .amt{font-family:var(--cs-mono);font-weight:500;font-size:38px;line-height:1;
+  letter-spacing:-1px;color:var(--cs-ink)}
+.pp-fee.is-accent .amt{color:var(--cs-gold)}
+.pp-fee .per{font-family:var(--cs-mono);font-size:10px;font-weight:500;letter-spacing:1.4px;
+  text-transform:uppercase;color:var(--cs-faint);margin:7px 0 14px}
+.pp-fee ul{margin:0;padding-left:17px;font-size:13px;color:var(--cs-soft);line-height:1.62}
+.pp-fee li{margin:6px 0}
+.pp-strip{margin:20px 0 0;font-family:var(--cs-mono);font-size:10.5px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;color:var(--cs-teal)}
+.pp-dealnote{margin-top:18px;padding:13px 18px;background:rgba(28,74,69,.07);
+  border:1px solid var(--cs-hair);border-left:3px solid var(--cs-teal);
+  border-radius:4px;font-size:12.5px;color:var(--cs-soft)}
+.pp-dealnote .wk{font-family:var(--cs-mono);font-weight:500;font-size:8.5px;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--cs-teal);margin-right:9px}
+
+/* ── what we need ── */
+.pp-rows{margin:22px 0 0;border-top:1px solid var(--cs-hair)}
+.pp-row{display:flex;gap:16px;align-items:flex-start;padding:13px 2px;
+  border-bottom:1px solid var(--cs-hair)}
+.pp-num{font-family:var(--cs-mono);font-size:11px;font-weight:500;color:var(--cs-teal);
+  letter-spacing:.08em;flex:0 0 26px;padding-top:3px}
+.pp-row strong{display:block;font-size:14.5px;font-weight:600;color:var(--cs-ink)}
+.pp-row em{display:block;font-style:normal;font-size:12.6px;color:var(--cs-soft);
+  margin-top:2px;line-height:1.55}
+.pp-quote{margin:26px 0 0;padding:16px 20px;border:1px solid var(--cs-hair);
+  border-left:3px solid var(--cs-ink);border-radius:4px;font-size:14px;color:var(--cs-soft)}
+.pp-quote p{margin:0}
+
+/* ── next step ── */
+.pp-next .pp-lead{margin-bottom:24px}
+.pp-btn-gold{display:inline-block;font-family:var(--cs-mono);font-size:11px;font-weight:500;
+  letter-spacing:1.8px;text-transform:uppercase;color:var(--cs-ink);
+  background:var(--cs-gold);border-radius:4px;padding:14px 26px;text-decoration:none}
+.pp-btn-gold:hover{background:#997839}
+.pp-next-mail{display:inline-block;margin-left:20px;font-family:var(--cs-mono);
+  font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cs-faint)}
+.pp-sign{margin-top:34px;font-family:var(--cs-display);font-style:italic;font-weight:500;
+  font-size:22px;letter-spacing:-.3px;color:var(--cs-ink)}
+
+/* ── about divider + footer ── */
+.pp-about-rule{border-top:2px solid var(--cs-ink);margin-top:8px}
+.pp-footer{border-top:1px solid var(--cs-hair);margin-top:0;padding:22px 0 34px;
+  display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  font-family:var(--cs-mono);font-size:9.5px;font-weight:500;letter-spacing:1.4px;
+  text-transform:uppercase;color:var(--cs-faint)}
+
+/* ── responsive ── */
+@media (max-width:900px){
+  .pp-cols,.pp-steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  .pp-wrap{padding:0 22px}
+  .pp-cols,.pp-steps,.pp-fees{grid-template-columns:1fr}
+  .pp-meta{flex-direction:column}
+  .pp-meta>div{padding-right:0}
+  .pp-meta>div+div{border-left:none;border-top:1px solid var(--cs-hair);padding-left:0}
+  .pp-demo{padding:30px 24px 28px}
+  .pp-tl-lab{font-size:8px;letter-spacing:.8px}
+  .pp-tl-lab.l0{max-width:31%;white-space:normal;line-height:1.3}
+  .pp-tl-lab.l5{max-width:31%;white-space:normal;line-height:1.3;text-align:right}
+  .pp-next-mail{display:block;margin:14px 0 0}
+}
+
+/* ── print ── */
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .pp-hero{padding:44px 0 36px}
+  .pp-sec{padding:40px 0 36px}
+  .pp-col,.pp-step,.pp-fee,.pp-demo,.pp-quote,.pp-row,.pp-tl,
+  .ab-hero,.ab-meta,.ab-kpi,.ab-col,.ab-scell,.ab-sdark,.ab-flow-step,.ab-quote,.ab-row{
+    break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+
+<style>
+/* ── CreditSwan About Us · scoped tokens (brand sheet V1) ── */
+#about{
+  --ab-ink:#16211F; --ab-cream:#F4EFE6; --ab-gold:#A98543;
+  --ab-heron:#1C4A45; --ab-gpale:#E9C583; --ab-claret:#5C2B2E;
+  --ab-hair:rgba(22,33,31,.14); --ab-hair-s:rgba(22,33,31,.30);
+  --ab-soft:rgba(22,33,31,.78); --ab-faint:rgba(22,33,31,.55);
+  --ab-display:'Cormorant Garamond',Georgia,serif;
+  --ab-body:'Manrope','Helvetica Neue',Arial,sans-serif;
+  --ab-mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  background:var(--ab-cream); color:var(--ab-ink);
+  font-family:var(--ab-body); font-size:15.5px; line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+}
+#about *{box-sizing:border-box}
+#about p{margin:0 0 14px}
+#about strong{font-weight:600;color:var(--ab-ink)}
+#about hr{border:0;border-top:1px solid var(--ab-hair);margin:34px 0}
+
+/* headings */
+#about h2{font-family:var(--ab-display);font-weight:600;color:var(--ab-ink);
+  font-size:27px;line-height:1.24;letter-spacing:-.5px;
+  margin:56px 0 16px;padding-top:20px;border-top:1px solid var(--ab-hair)}
+#about h3{font-family:var(--ab-display);font-weight:600;color:var(--ab-ink);
+  font-size:20px;letter-spacing:-.3px;margin:34px 0 12px}
+
+/* ── hero + brand lockup ── */
+#about .ab-hero{position:relative;overflow:hidden;text-align:center;
+  border-top:5px solid var(--ab-gold);padding:46px 0 38px;
+  border-bottom:1px solid var(--ab-hair)}
+#about .ab-hero>*{position:relative;z-index:1}
+#about .ab-lockup{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 26px}
+#about .ab-lockup svg{width:60px;height:53px;flex:0 0 auto;transform:translateY(2px)}
+#about .ab-word{font-family:var(--ab-display);font-weight:600;line-height:1;
+  color:var(--ab-ink);font-size:clamp(38px,5.4vw,56px);letter-spacing:-1.4px}
+#about .ab-wm{position:absolute;right:-72px;bottom:-92px;width:270px;height:270px;
+  opacity:.05;pointer-events:none;z-index:0}
+#about .ab-eyebrow{font-family:var(--ab-mono);font-size:10.5px;font-weight:500;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--ab-heron);margin:0 0 22px}
+#about .ab-thesis{font-family:var(--ab-display);font-weight:600;color:var(--ab-ink);
+  font-size:clamp(32px,4.4vw,50px);line-height:1.08;letter-spacing:-1.2px;margin:0}
+#about .ab-thesis em{font-style:italic;color:var(--ab-gold);font-weight:600}
+#about .ab-sum{max-width:720px;margin:26px auto 0;line-height:1.75;color:var(--ab-soft)}
+
+/* hero meta grid */
+#about .ab-meta{display:grid;grid-template-columns:1fr 1fr;max-width:780px;
+  margin:32px auto 0;border-top:1px solid var(--ab-hair);border-bottom:1px solid var(--ab-hair);
+  text-align:left}
+#about .ab-meta>div{padding:13px 22px;border-left:1px solid var(--ab-hair)}
+#about .ab-meta>div:nth-child(odd){border-left:none}
+#about .ab-meta>div:nth-child(n+3){border-top:1px solid var(--ab-hair)}
+#about .ab-meta .k{font-family:var(--ab-mono);font-size:9.5px;font-weight:500;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--ab-faint);margin-bottom:4px}
+#about .ab-meta .v{font-family:var(--ab-mono);font-size:14px;font-weight:500;color:var(--ab-ink)}
+#about .ab-meta .v.good{color:var(--ab-heron)}
+
+/* ── "the read" panel ── */
+#about .ab-read{margin:34px 0 26px;padding:16px 20px 14px;
+  background:rgba(169,133,67,.06);border:1px solid var(--ab-hair);
+  border-left:3px solid var(--ab-gold);border-radius:4px;font-size:15px}
+#about .ab-read .k{font-family:var(--ab-mono);font-size:10px;font-weight:500;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--ab-gold);margin:0 0 7px}
+#about .ab-read p{margin:0}
+
+/* ── three-up cards ── */
+#about .ab-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0 10px}
+#about .ab-col{border:1px solid var(--ab-hair);border-top:3px solid var(--ab-hair-s);
+  border-radius:4px;padding:14px 16px 12px}
+#about .ab-col h5{font-family:var(--ab-mono);font-size:9.5px;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--ab-heron);margin:0 0 8px}
+#about .ab-col ul{margin:0;padding-left:16px;font-size:12.5px;color:var(--ab-soft);line-height:1.55}
+#about .ab-col li{margin:5px 0}
+#about .ab-col.is-accent{border-top-color:var(--ab-gold)}   /* the one gold card */
+#about .ab-col.is-accent h5{color:var(--ab-gold)}
+
+/* ── numbered rows ── */
+#about .ab-rows{margin:14px 0 4px;border-top:1px solid var(--ab-hair)}
+#about .ab-row{display:flex;gap:16px;align-items:flex-start;padding:12px 2px;
+  border-bottom:1px solid var(--ab-hair)}
+#about .ab-num{font-family:var(--ab-mono);font-size:11px;font-weight:500;color:var(--ab-gold);
+  letter-spacing:.08em;flex:0 0 26px;padding-top:3px}
+#about .ab-row strong{display:block;font-size:14.5px;font-weight:600;color:var(--ab-ink)}
+#about .ab-row em{display:block;font-style:normal;font-size:12.5px;color:var(--ab-soft);
+  margin-top:2px;line-height:1.55}
+
+/* ── KPI row ── */
+#about .ab-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0 34px}
+#about .ab-kpi{border:1px solid var(--ab-hair);border-radius:4px;padding:20px 20px 16px}
+#about .ab-kpi.is-accent{border-top:5px solid var(--ab-gold)}
+#about .ab-kpi .k{font-family:var(--ab-mono);font-size:10px;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--ab-faint);margin-bottom:8px}
+#about .ab-kpi .n{font-family:var(--ab-mono);font-weight:500;font-size:29px;line-height:1.05;
+  letter-spacing:-.5px;color:var(--ab-ink);margin-bottom:9px}
+#about .ab-kpi .d{font-size:12.5px;line-height:1.5;color:var(--ab-soft)}
+#about .ab-kpi .src{margin-top:9px;font-family:var(--ab-mono);font-size:9px;
+  letter-spacing:.6px;text-transform:uppercase;color:var(--ab-faint)}
+
+/* ── tables ── */
+#about .ab-tbl{margin:18px 0 24px;overflow-x:auto;border:1px solid var(--ab-hair);border-radius:4px}
+#about .ab-tbl table{width:100%;border-collapse:collapse;font-size:12.5px;line-height:1.5}
+#about .ab-tbl th{font-family:var(--ab-mono);font-size:10px;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;text-align:left;color:var(--ab-heron);
+  padding:11px 12px;border-bottom:1px solid var(--ab-hair-s)}
+#about .ab-tbl td{padding:9px 12px;border-bottom:1px solid var(--ab-hair);
+  vertical-align:top;color:var(--ab-ink)}
+#about .ab-tbl tr:last-child td{border-bottom:none}
+#about .ab-tbl td.num{font-family:var(--ab-mono);font-size:12px;letter-spacing:-.2px;white-space:nowrap}
+#about .ab-tbl tr.ab-noterow td{background:rgba(28,74,69,.07);border-left:3px solid var(--ab-heron);
+  font-size:12px;color:var(--ab-soft)}
+#about .ab-tbl tr.ab-noterow .wk{font-family:var(--ab-mono);font-weight:500;font-size:8.5px;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--ab-heron);margin-right:9px}
+#about .ab-phase{display:block;font-family:var(--ab-mono);font-size:9px;font-weight:500;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--ab-heron);margin-top:5px}
+
+/* ── quote / why panels ── */
+#about .ab-quote{margin:26px 0;padding:16px 20px;border:1px solid var(--ab-hair);
+  border-left:3px solid var(--ab-ink);border-radius:4px}
+#about .ab-quote p:last-child{margin-bottom:0}
+#about .ab-why{margin:26px 0;padding:15px 20px 13px;background:rgba(28,74,69,.07);
+  border:1px solid var(--ab-hair);border-left:3px solid var(--ab-heron);border-radius:4px}
+#about .ab-why .k{font-family:var(--ab-mono);font-size:10px;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--ab-heron);margin:0 0 6px}
+
+/* ── trust chips ── */
+#about .ab-chips{display:grid;grid-template-columns:repeat(4,1fr);margin:16px 0;
+  border-top:1px solid var(--ab-hair);border-bottom:1px solid var(--ab-hair)}
+#about .ab-chip{padding:13px 18px 12px;border-left:1px solid var(--ab-hair)}
+#about .ab-chip:first-child{border-left:0}
+#about .ab-chip .k{font-family:var(--ab-mono);font-size:8.5px;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--ab-faint);margin-bottom:4px}
+#about .ab-chip .v{font-family:var(--ab-display);font-size:20px;font-weight:600;
+  color:var(--ab-ink);letter-spacing:-.3px}
+#about .ab-chip .d{font-family:var(--ab-mono);font-size:9.5px;color:var(--ab-soft);margin-top:4px}
+#about .ab-chip.is-accent .v{color:var(--ab-gold)}
+
+/* ── colophon ── */
+#about .ab-colophon{border-top:2px solid var(--ab-ink);margin-top:44px;padding:22px 0 0;
+  font-size:12px;color:var(--ab-soft)}
+#about .ab-colophon strong{font-family:var(--ab-display);font-size:17px;font-weight:600;color:var(--ab-ink)}
+
+/* ── responsive ── */
+@media (max-width:860px){
+  #about .ab-cols,#about .ab-kpis,#about .ab-chips{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  #about .ab-cols,#about .ab-kpis,#about .ab-chips,#about .ab-meta{grid-template-columns:1fr}
+  #about .ab-meta>div{border-left:none;border-top:1px solid var(--ab-hair)}
+  #about .ab-meta>div:first-child{border-top:none}
+  #about .ab-chip{border-left:0;border-top:1px solid var(--ab-hair)}
+  #about .ab-chip:first-child{border-top:0}
+  #about .ab-lockup{gap:10px}
+  #about .ab-lockup svg{width:44px;height:39px}
+  #about .ab-wm{display:none}
+}
+
+/* — proposal additions: 3-up KPI + trust flow — */
+#about .ab-kpis.k3{grid-template-columns:repeat(3,1fr)}
+#about .ab-sgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ab-hair);
+  border:1px solid var(--ab-hair);border-radius:4px;overflow:hidden;margin:16px 0 8px}
+#about .ab-sgrid .h{grid-column:1/-1;background:var(--ab-cream);padding:13px 18px;
+  font-family:var(--ab-mono);font-size:10.5px;font-weight:500;letter-spacing:2px;
+  text-transform:uppercase;color:var(--ab-heron)}
+#about .ab-scell{background:var(--ab-cream);padding:14px 18px 13px}
+#about .ab-scell .t{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0 0 6px}
+#about .ab-scell .nm{font-family:var(--ab-mono);font-size:10.5px;font-weight:500;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--ab-heron)}
+#about .ab-scell .tag{font-family:var(--ab-mono);font-size:9px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--ab-faint)}
+#about .ab-scell p{margin:0;font-size:13px;line-height:1.55;color:var(--ab-soft)}
+#about .ab-sdark{background:var(--ab-ink);display:flex;align-items:center;justify-content:center;
+  padding:18px;font-family:var(--ab-mono);font-size:11px;font-weight:500;letter-spacing:2px;
+  text-transform:uppercase;color:var(--ab-gold);text-align:center}
+#about .ab-flow{display:flex;align-items:stretch;margin:16px 0 8px}
+#about .ab-flow-step{flex:1;border:1px solid var(--ab-hair);border-top:3px solid var(--ab-hair-s);
+  border-radius:4px;padding:14px 16px 12px}
+#about .ab-flow-step .k{font-family:var(--ab-mono);font-size:9.5px;font-weight:500;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--ab-heron);margin:0 0 8px}
+#about .ab-flow-step p{font-size:12.5px;color:var(--ab-soft);line-height:1.6;margin:0}
+#about .ab-flow-arrow{align-self:center;padding:0 9px;font-family:var(--ab-mono);
+  color:var(--ab-faint);font-size:15px;flex:0 0 auto}
+@media (max-width:860px){
+  #about .ab-kpis.k3{grid-template-columns:1fr 1fr}
+  #about .ab-flow{flex-direction:column}
+  #about .ab-flow-arrow{transform:rotate(90deg);padding:7px 0;align-self:center}
+}
+@media (max-width:600px){
+  #about .ab-kpis.k3{grid-template-columns:1fr}
+  #about .ab-sgrid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="pp-goldrule"></div>
+
+<div class="pp-wrap">
+
+  <!-- ── top bar ── -->
+  <header class="pp-topbar">
+    <div class="pp-lockup">
+      <svg viewBox="7 12.6 26 23" fill="none" aria-hidden="true"><path d="M8 30c0-9 6-16 15-16 4 0 7 1 9 4-2-1-4-1-6 0 3 0 5 2 6 5-4-2-8-1-11 2-3 3-8 4-13 5z" fill="#16211F"/><circle cx="30.5" cy="15.5" r="1.4" fill="#A98543"/></svg>
+      <span>CreditSwan</span>
+    </div>
+    <div class="pp-doc">Pilot proposal · Confidential<br>creditswan.ai</div>
+  </header>
+
+  <!-- ── hero ── -->
+  <section class="pp-hero">
+    <p class="pp-eyebrow">Prepared for CID Capital</p>
+    <h1 class="pp-h1">One company in a week. Then the portfolio.</h1>
+    <p class="pp-sub">The pilot runs on one company and delivers inside a week: a full evidence pack computed from the company's own source systems, set in the context of market and benchmark data. If the pack earns it, coverage extends company by company across the CID portfolio at the monthly rate below.</p>
+    <div class="pp-meta">
+      <div><div class="k">Prepared for</div><div class="v">Eric Derheimer · CID Capital</div></div>
+      <div><div class="k">Date</div><div class="v">19 Aug 2026</div></div>
+    </div>
+  </section>
+
+  <!-- ── 01 · the pilot ── -->
+  <section class="pp-sec">
+    <p class="pp-eyebrow">01 · The pilot</p>
+    <h2 class="pp-h2">One evidence pack. Fixed scope, fixed fee.</h2>
+    <p class="pp-lead">CreditSwan takes one company — a live deal, a recent close, or a portfolio company — digests the data from its source systems, and surfaces what matters most. Then every number gets perspective: hundreds of third-party sources layered in, company performance set in the context of market and benchmark data, evaluated against comps — thousands of data points behind every exhibit.</p>
+
+    <div class="pp-cols">
+      <div class="pp-col"><h5>Revenue quality</h5><p>Gross-to-net decomposition, promo and discount dependence, price / volume / mix bridge across trailing periods.</p></div>
+      <div class="pp-col"><h5>Cohorts &amp; retention</h5><p>Repeat-purchase decay and cohort economics by vintage — how durable the revenue actually is.</p></div>
+      <div class="pp-col"><h5>Concentration</h5><p>Customer and channel dependency, top-account drift, and where the book quietly narrowed.</p></div>
+      <div class="pp-col"><h5>Acquisition economics</h5><p>CAC trajectory versus blended optics; contribution margin after fully loaded acquisition spend.</p></div>
+      <div class="pp-col"><h5>Margin &amp; cash</h5><p>Margin bridge, trade spend and deductions, working-capital and cash-conversion trend.</p></div>
+      <div class="pp-col is-accent"><h5>The scorecard</h5><p>Agreed before kickoff: the exhibits we'll be judged on — plus a flagged gap list of what the systems couldn't answer. A flagged gap beats a guess.</p></div>
+    </div>
+
+    <div class="pp-flexnote"><span class="wk">Fit to the book</span>The exhibit set flexes to the company. Consumer brands read on cohorts and CAC; distribution and multi-site platforms read on branch economics, customer concentration, and gross-margin drift — same pipeline, same rigor.</div>
+  </section>
+
+  <!-- ── 02 · sample packet ── -->
+  <section class="pp-sec">
+    <p class="pp-eyebrow" style="margin-bottom:24px">02 · The sample packet</p>
+    <div class="pp-demo">
+      <svg class="pp-wm" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M8 30c0-9 6-16 15-16 4 0 7 1 9 4-2-1-4-1-6 0 3 0 5 2 6 5-4-2-8-1-11 2-3 3-8 4-13 5z" fill="#F4EFE6"/></svg>
+      <h3>See a deliverable.</h3>
+      <p>A live, sealed sample built on anonymized data — the same exhibit architecture, navigation, and lineage the pilot delivers. Ten minutes in the sample answers most questions about what CID would actually receive.</p>
+      <div class="pp-demo-cta">
+        <!-- ══════════════════════════════════════════════════════════
+             DEMO LINK PLACEHOLDER — replace the href below with the
+             live sample-packet URL before sending.  Search: DEMO_LINK
+             ══════════════════════════════════════════════════════════ -->
+        <a class="pp-btn-ghost" href="REPLACE_WITH_DEMO_LINK">Open the sample packet →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 03 · timeline ── -->
+  <section class="pp-sec">
+    <p class="pp-eyebrow">03 · The clock</p>
+    <h2 class="pp-h2">One week, three steps.</h2>
+    <div class="pp-tl" aria-hidden="true">
+      <div class="pp-tl-line"></div>
+      <div class="pp-tl-tick" style="left:20%"></div>
+      <div class="pp-tl-tick" style="left:40%"></div>
+      <div class="pp-tl-tick" style="left:60%"></div>
+      <div class="pp-tl-tick" style="left:80%"></div>
+      <div class="pp-tl-build"></div>
+      <span class="pp-tl-dot d0"></span>
+      <span class="pp-tl-dot d5"></span>
+      <span class="pp-tl-lab l0">Day 0 · Kickoff</span>
+      <span class="pp-tl-lab lmid">Days 1–4 · Build</span>
+      <span class="pp-tl-lab l5">Day 5 · Delivery</span>
+    </div>
+    <div class="pp-steps">
+      <div class="pp-step"><h5>Kickoff — Day 0</h5><p>We send our asks: read-only access to the data and the source systems — one narrow list, sent the day we start.</p><span class="n">01</span></div>
+      <div class="pp-step"><h5>Build — Days 1–4</h5><p>Company data lands and is distilled — the highest-signal reads surface first. Behind them, hundreds of third-party sources layer in: benchmarks, market data, comps. Every figure computed, reconciled, and set in context.</p><span class="n">02</span></div>
+      <div class="pp-step"><h5>Delivery — Day 5</h5><p>The sealed evidence pack, delivered with a working session for your deal team — walked through exhibit by exhibit.</p><span class="n">03</span></div>
+    </div>
+  </section>
+
+  <!-- ── 04 · commercials ── -->
+  <section class="pp-sec">
+    <p class="pp-eyebrow">04 · The commercial structure</p>
+    <h2 class="pp-h2">A flat fee to prove it. A monthly rate to keep it on.</h2>
+    <div class="pp-fees">
+      <div class="pp-fee is-accent">
+        <div class="k">Pilot evidence pack</div>
+        <div class="amt">$12,500</div>
+        <div class="per">Flat fee · One company · Fixed scope</div>
+        <ul>
+          <li>Scorecard agreed before kickoff; delivered inside one week.</li>
+          <li>Covers a live deal, a recent close, or a portfolio company.</li>
+          <li><strong>Credited in full</strong> against the first quarter of monitoring if CID continues.</li>
+        </ul>
+      </div>
+      <div class="pp-fee">
+        <div class="k">Portfolio monitoring</div>
+        <div class="amt">$2,500</div>
+        <div class="per">Per company / per month</div>
+        <ul>
+          <li>Monthly refresh of the full pilot exhibit set, with alert thresholds calibrated with your portfolio team.</li>
+          <li>Month-to-month. No minimum term, no platform commitment.</li>
+          <li>$2,000 per company at five or more companies under coverage.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 05 · what we need ── -->
+  <section class="pp-sec">
+    <p class="pp-eyebrow">05 · What we need from CID</p>
+    <h2 class="pp-h2">Thirty minutes, one export, one contact.</h2>
+    <div class="pp-rows">
+      <div class="pp-row"><span class="pp-num">01</span><div><strong>Thirty minutes</strong><em>The evidence review with you or the deal lead — enough to lock the scorecard and the delivery date.</em></div></div>
+      <div class="pp-row"><span class="pp-num">02</span><div><strong>Read-only access</strong><em>System exports (ERP, commerce, payments) or a VDR drop — one narrow request list a company CFO can actually fill.</em></div></div>
+      <div class="pp-row"><span class="pp-num">03</span><div><strong>One contact</strong><em>A single point at the company or on your team for reconciliation questions during the build.</em></div></div>
+    </div>
+    <div class="pp-quote"><p><strong>The data never leaves the walls.</strong> Per-tenant VPC isolation on AWS, AES-256 at rest, DPA with a no-training commitment. All money math is deterministic — no LLM ever generates a reported figure. Source files handled under NDA and purged at engagement close on request.</p></div>
+  </section>
+
+  <!-- ── 06 · next step ── -->
+  <section class="pp-sec pp-next">
+    <p class="pp-eyebrow">06 · The next step</p>
+    <h2 class="pp-h2">Reply with the first company.</h2>
+    <p class="pp-lead">A live deal, a recent close, or a portfolio name you want sharper eyes on. Within 48 hours you'll have the confirmed scope, the pilot scorecard, and a delivery date.</p>
+    <div>
+      <a class="pp-btn-gold" href="mailto:accounts@creditswan.ai?subject=CreditSwan%20pilot%20%E2%80%94%20CID%20Capital">Start the pilot</a>
+      <span class="pp-next-mail">accounts@creditswan.ai</span>
+    </div>
+    <p class="pp-sign">Equity conviction, decided on evidence.</p>
+  </section>
+
+</div><!-- /pp-wrap -->
+
+<!-- ── About CreditSwan (portable block, equity edition) ── -->
+<div class="pp-wrap"><div class="pp-about-rule"></div></div>
+<div class="pp-wrap">
+<section id="about" aria-label="About Us">
+
+  <section class="ab-hero">
+    <svg class="ab-wm" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M8 30c0-9 6-16 15-16 4 0 7 1 9 4-2-1-4-1-6 0 3 0 5 2 6 5-4-2-8-1-11 2-3 3-8 4-13 5z" fill="#16211F"/></svg>
+    <div class="ab-lockup">
+      <svg viewBox="7 12.6 26 23" fill="none" aria-hidden="true"><path d="M8 30c0-9 6-16 15-16 4 0 7 1 9 4-2-1-4-1-6 0 3 0 5 2 6 5-4-2-8-1-11 2-3 3-8 4-13 5z" fill="#16211F"/><circle cx="30.5" cy="15.5" r="1.4" fill="#A98543"/></svg>
+      <span class="ab-word">CreditSwan</span>
+    </div>
+    <p class="ab-eyebrow">Deal Intelligence for Private Equity</p>
+    <h1 class="ab-thesis">The only platform that turns <em>commercial diligence</em> into equity conviction.</h1>
+    <p class="ab-sum">We see what QoE and market studies miss: <strong>verified unit economics</strong>, computed from raw target systems — Shopify, Amazon, Stripe, NetSuite and hundreds more — delivered as decision-grade deal intelligence for <strong>consumer goods, consumer services and food &amp; beverage</strong> investments.</p>
+    <div class="ab-meta">
+      <div><div class="k">Status</div><div class="v good">Live today — in production on pre-close diligence</div></div>
+      <div><div class="k">Who we work with</div><div class="v">Private-equity &amp; growth-equity teams</div></div>
+      <div><div class="k">Sectors</div><div class="v">Consumer goods · Consumer services · F&amp;B</div></div>
+      <div><div class="k">Model</div><div class="v">Priced like a rating — fee at diligence, monitoring tail</div></div>
+    </div>
+  </section>
+
+  <h2 id="about-lenses" style="border-top:0;padding-top:0;margin-top:40px">Three lenses on every consumer deal</h2>
+
+  <div class="ab-cols">
+    <div class="ab-col"><h5>Quality of Earnings</h5><ul>
+      <li><strong>Validates the accounting.</strong> Adjusted EBITDA, revenue recognition, working capital.</li>
+      <li>And it accepts management's commercial narrative.</li>
+    </ul></div>
+    <div class="ab-col"><h5>Commercial DD</h5><ul>
+      <li><strong>Validates the market.</strong> TAM, competitive set, expert calls and surveys.</li>
+      <li>Top-down — thin on the target's own economics.</li>
+    </ul></div>
+    <div class="ab-col is-accent"><h5>CreditSwan</h5><ul>
+      <li><strong>Verifies the commercial engine — the answer that actually prices the deal:</strong> is the revenue durable, and what does growth really cost.</li>
+      <li>Computed from raw systems, benchmarked against the market, delivered in investment-committee language.</li>
+    </ul></div>
+  </div>
+
+  <h3 id="about-facts">What you actually get</h3>
+
+  <div class="ab-rows">
+    <div class="ab-row"><span class="ab-num">01</span><div><strong>See what the seller's numbers hide.</strong><em>Cohorts, CAC, deductions and concentration verified from raw systems — the difference between the story and the engine, before you price it.</em></div></div>
+    <div class="ab-row"><span class="ab-num">02</span><div><strong>Thousands of data points for context.</strong><em>External sources layered onto the company's own numbers — market data, benchmarks, and contextual comps behind every read.</em></div></div>
+    <div class="ab-row"><span class="ab-num">03</span><div><strong>Stand behind every figure.</strong><em>Each number traced to its source file and reconciled — defensible at IC, with lenders, and in the model.</em></div></div>
+    <div class="ab-row"><span class="ab-num">04</span><div><strong>Keep eyes on after close.</strong><em>The same evidence base monitors the hold and flags drift months before the board pack does.</em></div></div>
+  </div>
+
+  <h2 id="about-engagement">Built around your deal clock</h2>
+
+  <p>Three engagements, one evidence base — <strong>a fee at diligence, a monitoring tail for the hold.</strong></p>
+
+  <div class="ab-kpis k3">
+    <div class="ab-kpi"><div class="k">01 · First Look</div><div class="n">4 days</div><div class="d">The go / no-go call, delivered inside exclusivity.</div><div class="src">Flat fee · credited against diligence</div></div>
+    <div class="ab-kpi is-accent"><div class="k">02 · Diligence</div><div class="n">2–3 weeks</div><div class="d">Full data-room ingestion, every figure reconciled to the GL — verified to the penny. An IC-ready file.</div><div class="src">Funded in transaction costs at close</div></div>
+    <div class="ab-kpi"><div class="k">03 · Monitoring</div><div class="n">Weekly</div><div class="d">The diligence pipes stay on for the hold — early-warning triggers months before the board pack.</div><div class="src">Monitoring tail per company</div></div>
+  </div>
+
+  <h3 id="about-surfaces">Target surfaces</h3>
+
+  <div class="ab-sgrid">
+    <div class="h">On every deal, we examine — financial and commercial</div>
+    <div class="ab-scell"><div class="t"><span class="nm">Revenue quality</span><span class="tag">Financial</span></div><p>Gross-to-net and promo dependence — traced to source systems, reconciled to the bank.</p></div>
+    <div class="ab-scell"><div class="t"><span class="nm">Unit economics</span><span class="tag">Financial</span></div><p>Cohorts, retention, and margin rebuilt from primary data.</p></div>
+    <div class="ab-scell"><div class="t"><span class="nm">Cash conversion</span><span class="tag">Financial</span></div><p>Earnings tied to actual cash; working-capital drag exposed.</p></div>
+    <div class="ab-scell"><div class="t"><span class="nm">Customer &amp; concentration</span><span class="tag">Commercial</span></div><p>Repeat-purchase decay, top-account and channel dependency.</p></div>
+    <div class="ab-scell"><div class="t"><span class="nm">Acquisition economics</span><span class="tag">Commercial</span></div><p>CAC trajectory vs. blended optics; contribution after fully loaded spend — <strong>the go / no-go call.</strong></p></div>
+    <div class="ab-sdark">…and whatever the deal demands&nbsp;→</div>
+  </div>
+
+  <h2 id="about-architecture">Hundreds of sources. One defensible number.</h2>
+
+  <p>Raw exports and live APIs in; <strong>deterministic computation in the middle</strong>; decision-grade output your IC can stand behind.</p>
+
+  <div style="margin:24px 0 8px;break-inside:avoid;page-break-inside:avoid">
+  <svg viewBox="0 0 700 522" width="100%" style="height:auto;display:block;max-width:680px;margin:0 auto" role="img" aria-label="Hundreds of third-party data sources flow through direct API connections, are reconciled, logged and traced, and produce one decision-grade, auditable answer" xmlns="http://www.w3.org/2000/svg">
+    <text x="350" y="20" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="13" letter-spacing="3" fill="#1C4A45">HUNDREDS OF THIRD-PARTY DATA SOURCES</text>
+    <!-- source squares -->
+    <g stroke="rgba(22,33,31,.5)" stroke-width="1.5" fill="none">
+      <rect x="55" y="42" width="14" height="14"/><rect x="241" y="42" width="14" height="14"/><rect x="334" y="42" width="14" height="14"/><rect x="520" y="42" width="14" height="14"/><rect x="613" y="42" width="14" height="14"/>
+      <rect x="194" y="90" width="14" height="14"/><rect x="287" y="90" width="14" height="14"/><rect x="380" y="90" width="14" height="14"/><rect x="473" y="90" width="14" height="14"/>
+      <rect x="148" y="138" width="14" height="14"/><rect x="427" y="138" width="14" height="14"/><rect x="520" y="138" width="14" height="14"/>
+      <rect x="287" y="186" width="14" height="14"/><rect x="380" y="186" width="14" height="14"/>
+    </g>
+    <g stroke="rgba(22,33,31,.5)" stroke-width="1.5" fill="rgba(22,33,31,.12)">
+      <rect x="148" y="42" width="14" height="14"/><rect x="427" y="42" width="14" height="14"/>
+      <rect x="101" y="90" width="14" height="14"/><rect x="566" y="90" width="14" height="14"/>
+      <rect x="241" y="138" width="14" height="14"/><rect x="194" y="186" width="14" height="14"/>
+    </g>
+    <rect x="334" y="138" width="14" height="14" fill="#A98543"/>
+    <rect x="473" y="186" width="14" height="14" fill="#A98543"/>
+    <!-- dashed convergence into the API bar -->
+    <g stroke="rgba(22,33,31,.32)" stroke-width="1.4" stroke-dasharray="2 5" fill="none">
+      <path d="M62,56 C62,110 168,196 168,250"/>
+      <path d="M620,56 C620,110 532,196 532,250"/>
+      <path d="M108,104 C108,150 205,206 205,250"/>
+      <path d="M573,104 C573,150 495,206 495,250"/>
+      <path d="M155,152 C155,186 243,216 243,250"/>
+      <path d="M527,152 C527,186 457,216 457,250"/>
+      <path d="M248,152 C248,186 280,216 280,250"/>
+      <path d="M434,152 C434,186 420,216 420,250"/>
+      <path d="M341,152 C341,186 350,216 350,250"/>
+      <path d="M201,200 C201,226 315,224 315,250"/>
+      <path d="M294,200 C294,226 340,224 340,250"/>
+      <path d="M387,200 C387,226 372,224 372,250"/>
+      <path d="M480,200 C480,226 398,224 398,250"/>
+    </g>
+    <!-- direct API connections bar -->
+    <rect x="128" y="250" width="444" height="42" fill="#16211F"/>
+    <rect x="128" y="250" width="4" height="42" fill="#A98543"/>
+    <text x="352" y="277" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="13" letter-spacing="3" fill="#F4EFE6">DIRECT API CONNECTIONS</text>
+    <!-- funnel to the reconcile point -->
+    <g stroke="rgba(22,33,31,.32)" stroke-width="1.4" stroke-dasharray="2 5" fill="none">
+      <path d="M220,292 C220,322 350,318 350,344"/>
+      <line x1="350" y1="292" x2="350" y2="344"/>
+      <path d="M480,292 C480,322 350,318 350,344"/>
+    </g>
+    <circle cx="350" cy="356" r="10" fill="#A98543"/>
+    <text x="350" y="392" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="12" letter-spacing="2.5" fill="rgba(22,33,31,.55)">RECONCILE · LOG · TRACE</text>
+    <line x1="350" y1="404" x2="350" y2="428" stroke="rgba(22,33,31,.32)" stroke-width="1.4" stroke-dasharray="2 5"/>
+    <!-- decision-grade bar -->
+    <rect x="192" y="432" width="316" height="42" fill="#16211F"/>
+    <rect x="192" y="432" width="4" height="42" fill="#A98543"/>
+    <text x="352" y="459" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="14" letter-spacing="4" fill="#F4EFE6">DECISION-GRADE</text>
+    <text x="350" y="506" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="12" letter-spacing="3" fill="#1C4A45">ONE AUDITABLE ANSWER</text>
+  </svg>
+  </div>
+
+  <h3 id="about-trust">The trust architecture</h3>
+
+  <div class="ab-flow">
+    <div class="ab-flow-step"><div class="k">01 · Capture</div><p>Immutable snapshots — every field fingerprinted to its source file, hash and mapping in a lineage ledger.</p></div>
+    <div class="ab-flow-arrow">→</div>
+    <div class="ab-flow-step"><div class="k">02 · Compute</div><p>Deterministic math only — versioned, tested, reproducible. <strong>No LLM ever generates a reported figure;</strong> models stay in our private VPC and are never trained on client data.</p></div>
+    <div class="ab-flow-arrow">→</div>
+    <div class="ab-flow-step"><div class="k">03 · Deliver</div><p>IC-ready diligence files and weekly monitoring feeds, with lineage attached to every number.</p></div>
+  </div>
+
+  <div class="ab-quote"><p><strong>Your target's data never leaves the walls. Your IC gets numbers it can stand behind.</strong></p><p><strong>Live today</strong> — in production on pre-close diligence with private-markets investors, across consumer goods, consumer services and food &amp; beverage.</p></div>
+
+  <div class="ab-colophon"><strong>◆ creditswan.ai</strong> · Deal Intelligence for Private Equity · <strong style="font-family:var(--ab-body);font-size:11px">REQUEST A SAMPLE DILIGENCE FILE</strong></div>
+  <p><em>Decision-grade equity diligence. Every number carries a source. A flagged gap beats a guess.</em></p>
+
+</section>
+</div>
+
+<!-- ── footer ── -->
+<div class="pp-wrap">
+  <footer class="pp-footer">
+    <span>accounts@creditswan.ai</span>
+    <span>CreditSwan provides analytical evidence and workflow tools — not investment advice. The sponsor retains the decision.</span>
+  </footer>
+</div>
+
+</body>
+</html>
